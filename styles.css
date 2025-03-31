@@ -18,24 +18,34 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('https://images.unsplash.com/photo-1618005182384-a83a8bd66f30?auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
     position: relative;
+    background: linear-gradient(135deg, #0f0c29, #302b63); /* Base gradient instead of image */
+    overflow: hidden; /* Ensure waves don’t overflow */
 }
 
-header::before {
+header::before,
+header::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 200%; /* Wide enough to create a seamless loop */
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for better text contrast */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.2)" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,149.3C672,149,768,203,864,213.3C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+    background-size: 50% 100%;
+    bottom: 0;
+    z-index: 1;
+    animation: wave 15s linear infinite;
 }
 
-.header-content {
+header::after {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,245.3C672,245,768,203,864,197.3C960,192,1056,224,1152,229.3C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+    animation: wave 20s linear infinite reverse; /* Slower and in reverse for depth */
+}
+
+header .header-content {
     position: relative;
     text-align: center;
-    animation: fadeInUp 1.2s ease-out; /* Smoother animation */
+    animation: fadeInUp 1.2s ease-out;
+    z-index: 2; /* Ensure content is above waves */
 }
 
 h1 {
@@ -52,6 +62,16 @@ h1 {
     overflow: hidden;
     white-space: nowrap;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Wave Animation */
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move left to create a seamless loop */
+    }
 }
 
 /* Navigation Styles */
@@ -115,9 +135,9 @@ section {
     min-height: 60vh;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    width: 100%; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 h2 {
@@ -132,15 +152,15 @@ h2 {
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 50px;
-    max-width: 900px; /* Set max width */
+    max-width: 900px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transform: translateY(50px);
     opacity: 0;
     transition: all 0.6s ease-out;
-    margin: 0 auto; /* Center the glass-card within the section */
-    display: block; 
-    text-align: center; /* Center all text content inside */
+    margin: 0 auto;
+    display: block;
+    text-align: center;
 }
 
 .glass-card.visible {
@@ -161,7 +181,7 @@ h2 {
     gap: 20px;
     max-width: 600px;
     width: 100%;
-    margin: 0 auto; /* Center the form within glass-card */
+    margin: 0 auto;
 }
 
 /* Portfolio Styles */
@@ -173,8 +193,8 @@ h2 {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px; /* More spacing between cards */
-    max-width: 1400px; /* Wider for larger screens */
+    gap: 40px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -185,7 +205,7 @@ h2 {
     transform: scale(0.95);
     opacity: 0;
     transition: all 0.5s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-card.visible {
@@ -194,8 +214,8 @@ h2 {
 }
 
 .project-card:hover {
-    transform: scale(1.02); /* Slight lift on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .project-card img {
@@ -227,18 +247,18 @@ h2 {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.9); /* More opaque for readability */
+    background: rgba(0, 0, 0, 0.9);
     padding: 25px;
     transform: translateY(100%);
     transition: transform 0.4s ease;
-    z-index: 3; /* Ensure text is above image */
+    z-index: 3;
 }
 
 .project-info h3,
 .project-info p,
 .project-info a {
     color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .project-info h3 {
@@ -258,7 +278,7 @@ h2 {
 /* Skills Styles */
 .skills {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
     gap: 15px;
     margin-top: 25px;
     justify-content: center;
@@ -301,7 +321,7 @@ h2 {
 form {
     display: grid;
     gap: 20px;
-    max-width: 600px; /* Slightly wider form */
+    max-width: 600px;
     width: 100%;
 }
 
@@ -329,7 +349,7 @@ form textarea {
 
 /* Footer Styles */
 footer {
-    background: #0f0c29; /* Match the darker gradient tone */
+    background: #0f0c29;
     padding: 40px;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
