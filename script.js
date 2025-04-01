@@ -1,5 +1,5 @@
 // Typewriter Effect
-const tagline = "Game Developer | AI Engineer | Visionary";
+const tagline = "Software Engineer | Game Developer | Visionary";
 const taglineElement = document.querySelector(".typewriter");
 let i = 0;
 
