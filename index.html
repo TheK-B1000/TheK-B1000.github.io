@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Kevin-Brandon J. Corbett | Portfolio</title>
+
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
     <!-- Header Section -->
     <header id="home">
         <div class="header-wrapper">
@@ -23,114 +25,167 @@
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" aria-label="Go to Home section">Home</a></li>
+            <li><a href="#about" aria-label="Go to About section">About</a></li>
+            <li><a href="#portfolio" aria-label="Go to Portfolio section">Portfolio</a></li>
+            <li><a href="#contact" aria-label="Go to Contact section">Contact</a></li>
         </ul>
     </nav>
 
     <!-- About Section -->
     <section id="about" class="glass-card">
-    <h2>About Me</h2>
-    <p>I'm Kevin-Brandon J. Corbett, an innovative Software Engineer with a Master’s in Computer Science from the University of North Florida (GPA 3.8, expected Fall 2026). Specializing in software and game development, I blend expertise in AI technologies, programming, and immersive design to craft cutting-edge solutions. With a strong foundation in information science (B.S., UNF, GPA 3.5, 2024) and a passion for community engagement, I’m driven to bridge business needs with emerging tech to fuel innovation.</p>
-    <div class="skills">
-        <span>C++</span>
-        <span>C#</span>
-        <span>Python</span>
-        <span>Unity</span>
-        <span>Unreal</span>
-        <span>SQL</span>
-        <span>AI Development</span>
-    </div>
-</section>
+        <h2>About Me</h2>
+
+        <p>
+            I'm Kevin-Brandon J. Corbett, an innovative Software Engineer with a Master’s in Computer Science
+            from the University of North Florida, expected Fall 2026. Specializing in software development,
+            game development, AI, and immersive technology, I build systems that connect technical depth with
+            creative user experiences. With a strong foundation in information science and a passion for emerging
+            technology, I’m driven to bridge business needs with intelligent, interactive solutions.
+        </p>
+
+        <div class="skills">
+            <span>C++</span>
+            <span>C#</span>
+            <span>Python</span>
+            <span>Unity</span>
+            <span>Unreal</span>
+            <span>SQL</span>
+            <span>AI Development</span>
+            <span>Machine Learning</span>
+            <span>Reinforcement Learning</span>
+        </div>
+    </section>
 
     <!-- Portfolio Section -->
-<section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="project-card">
-        <img src="images/marl-ctf.png" alt="Multi-Agent Reinforcement Learning Capture the Flag Project">
-            <div class="project-info">
-                <h3>Multi-Agent Reinforcement Learning CTF</h3>
-                <p>
-                    Implemented PPO-based multi-agent reinforcement learning with curriculum and league-style opponent training 
-                    for autonomous surface vessel Capture-the-Flag simulations. Evaluated policy robustness against scripted, 
-                    self-play, and held-out opponents to test generalization in adversarial environments.
-                </p>
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+
+        <div class="project-grid">
+
+            <!-- SEA-GUARD / MARL Project -->
+            <div class="project-card">
+                <img src="images/marl-ctf.png" alt="SEA-GUARD Multi-Agent Reinforcement Learning Capture the Flag Project">
+                <div class="project-info">
+                    <h3>SEA-GUARD: Multi-Agent RL CTF</h3>
+                    <p>
+                        Implemented PPO-based multi-agent reinforcement learning with curriculum and league-style
+                        opponent training for autonomous surface vessel Capture-the-Flag simulations. Evaluated
+                        policy robustness against scripted, self-play, and held-out opponents to test generalization
+                        in adversarial environments.
+                    </p>
+                </div>
             </div>
-    </div>
-    <div class="project-grid">
-        <div class="project-card">
-            <img src="images/crms.png" alt="Hope Haven Inventory System">
-            <div class="project-info">
-                <h3>Hope Haven Inventory System</h3>
-                <p>Built an inventory management system for Hope Haven using Azure, C#, Quartz.net, and SQL, enhancing accuracy by 20% and streamlining operations.</p>
+
+            <!-- Hope Haven Inventory System -->
+            <div class="project-card">
+                <img src="images/crms.png" alt="Hope Haven Inventory System">
+                <div class="project-info">
+                    <h3>Hope Haven Inventory System</h3>
+                    <p>
+                        Built an inventory management system for Hope Haven using Azure, C#, Quartz.NET, and SQL,
+                        enhancing accuracy by 20% and streamlining operational workflows.
+                    </p>
+                </div>
             </div>
+
+            <!-- Quantum Strike -->
+            <div class="project-card">
+                <img src="images/qs.jpg" alt="Quantum Strike Mixed Reality Game">
+                <div class="project-info">
+                    <h3>Quantum Strike</h3>
+                    <p>
+                        A mixed reality game where players defend the Quantum Realm. Features Horde Survival Mode,
+                        custom PvP maps, loot upgrades, and immersive battles for up to 6 players.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tomatoes vs Trollies -->
+            <div class="project-card">
+                <img src="images/tvt.png" alt="Tomatoes vs Trollies Game Jam Project">
+                <div class="project-info">
+                    <h3>Tomatoes vs Trollies</h3>
+                    <p>
+                        A tower defense game crafted in a 10-day game jam during a Twitch livestream. This project
+                        blends strategic gameplay and quirky design to fend off trollies with tomato-powered defenses.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Acera AI Assistant -->
+            <div class="project-card">
+                <img src="images/acera.png" alt="Acera AI Assistant">
+                <div class="project-info">
+                    <h3>Acera AI Assistant</h3>
+                    <p>
+                        An AI assistant developed with Python, OpenAI, Pygame, and gesture control. This project
+                        enhances user interaction through voice, visual feedback, and intuitive command systems.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Capture the Flag -->
+            <div class="project-card">
+                <img src="images/hasflag.png" alt="Capture the Flag AI Project">
+                <div class="project-info">
+                    <h3>Capture the Flag</h3>
+                    <p>
+                        Developed a Capture the Flag game in Qt and C++ for an AI class project, implementing
+                        pathfinding and decision-making algorithms for intelligent gameplay behavior.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pac-Man Deep Q-Learning AI -->
+            <div class="project-card">
+                <img src="images/cnn.png" alt="Pac-Man Deep Q-Learning AI">
+                <div class="project-info">
+                    <h3>Pac-Man Deep Q-Learning AI</h3>
+                    <p>
+                        Developed a Deep Q-Learning AI agent to autonomously learn and play Pac-Man using Python,
+                        TensorFlow, and Pygame. The agent processes game states and improves decision-making through
+                        reinforcement learning.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Snap2Cal -->
+            <div class="project-card">
+                <img src="images/snap2cal.png" alt="Snap2Cal Food Classifier App">
+                <div class="project-info">
+                    <h3>Snap2Cal Food Classifier App</h3>
+                    <p>
+                        Built a mobile nutrition tracking concept using CNN-based machine learning to classify food
+                        images from a dataset, simplifying calorie and food recognition workflows.
+                    </p>
+                </div>
+            </div>
+
         </div>
-        <div class="project-card">
-            <img src="images/qs.jpg" alt="Quantum Strike">
-            <div class="project-info">
-                <h3>Quantum Strike</h3>
-                <p>A mixed reality game where players defend the Quantum Realm. Features Horde Survival Mode, custom PvP maps, loot upgrades, and immersive battles for up to 6 players.</p>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images/tvt.png" alt="Tomatoes vs Trollies">
-            <div class="project-info">
-                <h3>Tomatoes vs Trollies</h3>
-                <p>A tower defense game crafted in a 10-day game jam during a Twitch livestream. This project blends strategic gameplay and quirky design to fend off trollies with tomato-powered defenses.</p>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images/acera.png" alt="Acera AI Assistant">
-            <div class="project-info">
-                <h3>Acera AI Assistant</h3>
-                <p>An innovative AI assistant developed with Python, OpenAI, Pygame, and gesture control. This project enhances user interaction through intuitive, responsive design, showcasing advanced AI integration.</p>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images/hasflag.png" alt="Capture the Flag">
-            <div class="project-info">
-                <h3>Capture the Flag</h3>
-                <p>Developed a Capture the Flag game in Qt and C++ for an AI class project, implementing advanced pathfinding and decision-making algorithms. This project significantly increased player engagement and earned top marks for functionality.</p>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images/cnn.png" alt="Pac-Man Deep Q-Learning AI">
-            <div class="project-info">
-                <h3>Pac-Man Deep Q-Learning AI</h3>
-                <p>Developed a deep Convolutional Q-learning AI agent to autonomously learn and play Pac-Man. Using Python, TensorFlow, and Pygame, the agent leverages convolutional neural networks to process game states and optimize decision-making, achieving high scores through reinforcement learning.</p>
-            </div>
-        </div>
-         <div class="project-card">
-            <img src="images/snap2cal.png" alt="Snap2Cal Food Classfier App">
-            <div class="project-info">
-                <h3>Snap2Cal Food Classfier App</h3>
-                <p>Snap2Cal is an innovative mobile application designed to simplify nutrition tracking by leveraging advanced Convolutional Neural Network (CNN) machine learning technology. Created for a Machine Learning Project. It can correctly classify food from the dataset we used.</p>
-            </div>
-        </div>
-        <!-- Add more project cards here -->
-    </div>
-</section>
-    
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="glass-card">
         <h2>Contact</h2>
+
         <p>Let’s create something amazing together.</p>
+
         <form>
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Your Message" required></textarea>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Kevin-Brandon J. Corbett</p>
+        <p>© 2026 Kevin-Brandon J. Corbett</p>
+
         <div class="social-links">
-            <a href="https://github.com/TheK-B1000">GitHub</a>
-            <a href="http://www.linkedin.com/in/kevinbrandoncorbett">LinkedIn</a>
+            <a href="https://github.com/TheK-B1000" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="http://www.linkedin.com/in/kevinbrandoncorbett" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
     </footer>
 
